@@ -1,0 +1,111 @@
+<html>
+<head>
+	<style>
+	body{
+	padding: 0;
+	margin: 0;
+  font-family: Verdana;
+}
+
+#wrapper{
+	margin-left: 34vw;
+	border: 1px solid grey;
+	border-radius: 2px;
+	height: 30vh;
+	margin-top: 20vh;
+	width: 30vw;
+}
+
+table{
+margin-top: 2vh;
+margin-left: 2vw;
+}
+
+</style>
+<script>
+function con(country,state) {
+    var USA = ['California', 'Texas', 'Colorado', 'Hawai'];
+    USA.sort();
+    var india = ['UP', 'Rajasthan', 'Delhi', 'Punjab'];
+    india.sort();
+    var canada = ['Ontario', 'British Columbia', 'Alberta', 'Nova Scotia'];
+    canada.sort();
+
+
+    switch (country.value) {
+        case 'USA':
+        {state.options.length = 0;
+            for (i = 0; i < USA.length; i++) {
+                var a = document.createElement('option');
+                  a.text = USA[i];
+                  state.options.add(a);
+            }
+            break;}
+            
+
+        case 'India':
+            {state.options.length = 0; 
+        for (i = 0; i < india.length; i++) {
+            var a = document.createElement('option');
+           a.text = india[i];
+           state.options.add(a);
+           }
+            break;}
+
+        case 'Canada':
+            {state.options.length = 0;
+            for (i = 0; i < canada.length; i++) {
+                var a = document.createElement('option');
+                 a.text = canada[i];
+                 state.options.add(a);
+            }
+            break;}
+
+        default:
+        {      state.options.length = 0;
+            }
+          
+    }
+
+}
+    </script>
+</head>
+
+<body>
+
+
+	<div id="wrapper">
+		<form>
+		<table border="0">
+         
+         <tr>
+         	<td>Country</td>
+         	<td>
+         		<select id="country" onchange="con(document.getElementById('country'),document.getElementById('state'))">
+                 <option> </option>
+                 <option>India</option>
+                 <option>USA</option>
+                 <option>Canada</option>
+
+            </select>
+          </td>
+         </tr>
+         
+
+         <tr>
+         	<td>States</td>
+         	<td>
+         		<select id="state">
+         	    </select>
+
+         	</td>
+         </tr>
+
+		</table>
+	</form>
+	</div>
+
+</body>
+</html>
+
+
